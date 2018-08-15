@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//  Q5   A. - Create a constructor function for a Vehicle. Each vehicle should have a make, model and year property.
+// B. - Add a function to the Vehicle prototype called start which returns the string "VROOM!"
+// C.  - Add a function to the Vehicle prototype called toString which returns the string "The make, model, and year are" concatenated with the make, model and year property
+// /* Examples
+// var vehicle = new Vehicle("Tractor", "John Deere", 1999)
+// vehicle.toString() // 'The make, model, and year are Tractor John Deere 1999'
+// */
+// D. - Create a constructor function for a Car. Each object created from the Car function should also have a make, model, and year and a property called numWheels which should be 4. The Car prototype should inherit all of the methods from the Vehicle prototype
+// E. - Create a constructor function for a Motorcycle. Each object created from the Motorcycle function should also have a make, model, and year and a property called numWheels which should be 2. The Motorcycle prototype should inherit all of the methods from the Vehicle prototype
+
+var a = prompt("Enter The Value");
+    for (var i =0 ; i <=100; i++) {
+        if(i%2==0){
+            console.log( 'the number is even');
+
+        }
+        else if (a% 2!== 0){
+            console.log( 'the number is in odd');
+        }
+    }
+    function bus( makeYear , seats ,model ){
+        this.makeYear=makeYear,
+            this.seats=seats,
+            this.model=model,
+            this.numberofWheels=6,
+
+
+            function car (){
+                bus(this.makeYear,this.seats,this.model);
+                this.numberofWheels=4,
+            }
+        var tata = new bus (1995, 50, 305);
+        console.log(tata);
+//  }
+//  // i++;
+
+        function vehicle ( make,model,year){
+            this.make = make,
+                this.model = model,
+                this.year = year
+
+        }
+        vehicle.prototype.start = function (){
+            return 'VROOM' ;
+        }
+        vehicle.prototype.toString = function() {
+            return "the make model year "+ this.make+this.model+this.year ;
+        }
+        var tractor = new vehicle(" tractor ", " jhone Deere ", 1999);
+        console.log (tractor.toString());
+
+
+
+        function car (make , model , year )
+        {
+            vehicle.apply(this,arguments)
+            this.numWheels = 4 ;
+
+        }
+        car.prototype = Object.create(vehicle.prototype);
+
+
+        car.prototype.construtor = car
+
+        var tata = new car( "nexon" , "indica" , 2001);
+        console.log (car.toString());
+
+
+        function bike (make ,model ,year ){
+            vehicle.apply(this,arguments)
+            this.numWheels = 2 ;
+        }
+        bike.prototype = Object.create(vehicle.prototype);
+
+
+        bike.prototype.construtor = bike
+
+        var honda = new  bike(" activa ", " 4g " , 2015,)
+        console.log(bike.toString());
+
+
+    //Q1  When not use an arrow function? Explain with example
+    //
+    //     Arrow Function : Arrow function is newly released method in java script ES06 version .. it is the new way to declared  a function which can we use in code in one line code.  in Es05 we use regular function example is in give below
+    //
+    // Example of usin function method in Es05 :-
+
+        function tripleAndFilter(arr){
+            return arr.map(function(value){
+                return value * 3;
+            }).filter(function(value){
+                return value % 5 === 0;
+            })
+
+       //     Below is the regular function expression, now lets see how can we write this function by using the Arrow Function in which arguments has a value in its outer scope...
+
+            var tripleAndFilter = (arr) => arr.map((value)=> value * 3).filter((value) => value%5 === 0);
+
+   //         Here We using Arrow Function tripleAndFilter its define a regular function expression when we call function tripleAndFilter(1,2,5,4,6,2,1,4); it invoke the value passes in arguments the terminal give us the result as value. thi ii s bcoz  tripleAndFilter is inner function inhertis the value of arguments from the outer function scope. this behaviour of arow function  can be usefull to bind the arguments when creating a nested function.
+
+//           Q2 Explain Rest and Spread with example?
+      //      With the spread operator we can avoid apply all together and simply call the function with the spread operator before the array:
+
+       //         Following is the example of explcity function using the ES05
+            function sep (x, y, z) { }
+            var arr = [0, 1, 2];
+            sep.apply(null, arr);
+
+        //    This is the regular explicity function we use in ES05
+          //  Now let see the same thing how can we run the function with using of ES06
+
+            example:  function sep (x, y, z) { }
+            var arr = [0, 1, 2];
+            sep(...arr);
+
+
+           // Rest :- A function can be called with any number of arguments, no matter how it is defined.A function can be called with any number of arguments, no matter how it is defined.
+
+                //example : following is the exmpale in es05 for sum of a +b
+
+
+                function sum(a, b) {
+                    return a + b;
+                }
+            sum(1, 2, 3, 4, 5);
+
+       // in rest oprator is lil bit easir the regular method lets see the example
+
+            function sumAll(...arr) {
+                let sum = 0;
+
+                sum += arg;
+
+                return sum;
+            }
+            sumAll(1, 2);
+
+
+
+</script>
+
+
+</body>
+</html>
