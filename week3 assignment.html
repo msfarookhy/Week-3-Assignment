@@ -6,6 +6,23 @@
 </head>
 <body>
 <script>
+    
+    //Q 3 Create a constructor function for a Person, each person should have a firstName, lastName, favoriteColor and favoriteNumber. Your function MUST be named Person.  Write a method called multiplyFavoriteNumber that takes in a number and returns the product of the number and the object created from the Person functions' favorite number.
+       
+       function person(firstname,lastname,favcolor,favNumber){
+            this.firstname=firstname,
+            this.lastname=lastname,
+            this.favcolor=favcolor
+            this.favNumber=favNumber,
+            this.multiply =function(number){
+                return number* this.favNumber
+            }
+        }
+        var saif = new person("farooqui","saif","blue",4);
+        console.log(saif.multiply(3));
+        console.log(saif);
+    
+    
 //  Q5   A. - Create a constructor function for a Vehicle. Each vehicle should have a make, model and year property.
 // B. - Add a function to the Vehicle prototype called start which returns the string "VROOM!"
 // C.  - Add a function to the Vehicle prototype called toString which returns the string "The make, model, and year are" concatenated with the make, model and year property
