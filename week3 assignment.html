@@ -104,9 +104,12 @@ var a = prompt("Enter The Value");
         console.log(bike.toString());
 
 
-    //Q1  When not use an arrow function? Explain with example
+    //  Why using arrow functions instead of the ES2015 object method notation is preferable??Leave an Example?
+
     //
-    //     Arrow Function : Arrow function is newly released method in java script ES06 version .. it is the new way to declared  a function which can we use in code in one line code.  in Es05 we use regular function example is in give below
+    //     Arrow Function : Arrow function is newly released method in java script ES06 version .. 
+            //it is the new way to declared  a function which can we use in code in one line code.
+            //in Es05 we use regular function example is in give below
     //
     // Example of usin function method in Es05 :-
 
@@ -117,11 +120,14 @@ var a = prompt("Enter The Value");
                 return value % 5 === 0;
             })
 
-       //     Below is the regular function expression, now lets see how can we write this function by using the Arrow Function in which arguments has a value in its outer scope...
+       //     Below is the regular function expression, now lets see how can we write this function by using the Arrow Function 
+            //in which arguments has a value in its outer scope...
 
             var tripleAndFilter = (arr) => arr.map((value)=> value * 3).filter((value) => value%5 === 0);
 
-   //         Here We using Arrow Function tripleAndFilter its define a regular function expression when we call function tripleAndFilter(1,2,5,4,6,2,1,4); it invoke the value passes in arguments the terminal give us the result as value. thi ii s bcoz  tripleAndFilter is inner function inhertis the value of arguments from the outer function scope. this behaviour of arow function  can be usefull to bind the arguments when creating a nested function.
+   //        // Here We using Arrow Function tripleAndFilter its define a regular function expression when we call function
+            //tripleAndFilter(1,2,5,4,6,2,1,4); it invoke the value passes in arguments the terminal give us the result as value.
+            //thi ii s bcoz  tripleAndFilter is inner function inhertis the value of arguments from the outer function scope. this behaviour of arow function  can be usefull to bind the arguments when creating a nested function.
 
 //           Q2 Explain Rest and Spread with example?
       //      With the spread operator we can avoid apply all together and simply call the function with the spread operator before the array:
